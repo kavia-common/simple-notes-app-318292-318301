@@ -27,6 +27,27 @@ Launches the test runner in interactive watch mode.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
+## Notes App Persistence (localStorage)
+
+This notes app persists data in the browser using `localStorage`.
+
+- Storage key: `notes_app.v1`
+- Load: on app start
+- Save: on create/update/delete operations
+
+Implementation details:
+- `src/services/notesService.js` is the data layer.
+- `src/utils/storage.js` contains safe `localStorage` JSON helpers.
+
+### Future backend support (optional)
+
+If you later add a backend, set one of these environment variables:
+
+- `REACT_APP_BACKEND_URL` (preferred)
+- or `REACT_APP_API_BASE`
+
+The service is structured so you can swap the local implementations with `fetch()` calls when backend endpoints exist.
+
 ## Customization
 
 ### Colors
